@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Winners | Frolic EMS</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 56px;
+        }
+
+        header {
+            color: #212529;
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        header h1 { margin: 0; font-weight: 600; }
+
+        .navbar {
+            background: linear-gradient(90deg, #0d6efd, #6610f2) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+        }
+
+        .navbar .navbar-brand, .navbar .nav-link, .navbar .btn { color: rgba(255,255,255,0.95) !important; }
+        .navbar .nav-link:hover, .navbar .btn:hover { color: #fff !important; }
+        .navbar .btn-outline-light { border-color: rgba(255,255,255,0.8); color: #fff !important; }
+        .navbar .btn-outline-light:hover { background: rgba(255,255,255,0.2); border-color: #fff; color: #fff !important; }
+        .navbar .navbar-toggler { border-color: rgba(255,255,255,0.5); }
+        .navbar .navbar-toggler-icon { filter: brightness(0) invert(1); }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-custom {
+            border-radius: 20px;
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation (Fixed at top) -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="dashboard.html">Admin Panel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="ms-auto">
+                <a href="dashboard.html" class="btn btn-outline-light btn-custom">Dashboard</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header>
+    <h1>Declare Winners</h1>
+</header>
+
+<div class="container mt-5 flex-grow-1">
+
+    <!-- Declare Winner Form -->
+    <div class="card p-4 mb-4">
+        <h3 class="text-primary mb-4">Select Winners</h3>
+
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Select Event</label>
+                <select class="form-select">
+                    <option>Coding Challenge</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">1st Prize</label>
+                <select class="form-select">
+                    <option>Alpha Team</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">2nd Prize</label>
+                <select class="form-select">
+                    <option>Beta Team</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">3rd Prize</label>
+                <select class="form-select">
+                    <option>Gamma Team</option>
+                </select>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success btn-custom">
+                    Declare Winners
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Winner List -->
+    <div class="card p-4">
+        <h3 class="text-primary mb-4">Winner List</h3>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                🥇 1st - Alpha Team
+                <span class="badge bg-warning text-dark">Gold</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                🥈 2nd - Beta Team
+                <span class="badge bg-secondary">Silver</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                🥉 3rd - Gamma Team
+                <span class="badge bg-danger">Bronze</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Frolic EMS | Admin Panel</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

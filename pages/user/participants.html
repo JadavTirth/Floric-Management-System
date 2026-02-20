@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Participants - Frolic EMS</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(-45deg, #89f7fe, #66a6ff, #a18cd1, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            width: 95%;
+            max-width: 900px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .table {
+            color: white;
+        }
+
+        .table thead {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .table tbody tr:hover {
+            background: rgba(255,255,255,0.15);
+            transition: 0.3s;
+        }
+
+        .form-control, .form-select {
+            border-radius: 25px;
+            padding: 10px 15px;
+        }
+
+        .btn-custom {
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>👥 Group Participants</h1>
+</header>
+
+<nav>
+    <a href="my-groups.html">⬅ Back to My Groups</a>
+</nav>
+
+<div class="content-container">
+    <div class="card">
+
+        <!-- Participants Table -->
+        <h4 class="mb-3">Participant List</h4>
+        <div class="table-responsive">
+            <table class="table text-center align-middle">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Enrollment No</th>
+                        <th>Leader</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rahul Sharma</td>
+                        <td>EN12345</td>
+                        <td>
+                            <span class="badge bg-success">Yes</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="text-white">
+
+        <!-- Add Participant Form -->
+        <h4 class="mb-3">➕ Add Participant</h4>
+
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Enter Name" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Enter Enrollment No" required>
+            </div>
+
+            <div class="mb-3">
+                <select class="form-select">
+                    <option selected disabled>Is Group Leader?</option>
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-light btn-custom">
+                    Add Participant
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Frolic Event Management System
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
