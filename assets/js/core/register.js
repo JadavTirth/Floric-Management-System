@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("registerForm");
-
-    if (!form) return; // safety check
+    if (!form) return;
 
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("password").value.trim();
         const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-        // Basic validation
         if (!name || !email || !password || !confirmPassword) {
             alert("All fields are required ❌");
             return;
@@ -25,17 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
 
-            const response = await apiRequest("/auth/register", "POST", {
-                userName: name,
-                emailAddress: email,
-                userPassword: password
+            const res = await fetch("http://localhost:8000/api/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userName: name,
+                    emailAddress: email,
+                    userPassword: password
+                })
             });
 
-            console.log("Register Response:", response);
+            const data = await res.json().catch(() => ({}));
+
+            if (!res.ok) {
+                throw new Error(data.message || "Registration failed");
+            }
 
             alert("Registration Successful 🎉 Please login.");
-
-            // Redirect to login page
             window.location.href = "../../pages/auth/login.html";
 
         } catch (error) {

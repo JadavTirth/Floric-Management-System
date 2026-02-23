@@ -1,23 +1,13 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "http://localhost:000/api";
 
-// Generic API request function
-async function apiRequest(endpoint, method = "GET", data = null, requiresAuth = false) {
-
-    const headers = {
-        "Content-Type": "application/json"
-    };
-
-    // Attach token if required
-    if (requiresAuth) {
-        const token = localStorage.getItem("token");
-        if (token) {
-            headers["Authorization"] = "Bearer " + token;
-        }
-    }
+// Generic API request function (No Auth)
+async function apiRequest(endpoint, method = "GET", data = null) {
 
     const options = {
         method,
-        headers
+        headers: {
+            "Content-Type": "application/json"
+        }
     };
 
     if (data) {

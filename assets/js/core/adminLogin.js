@@ -1,10 +1,13 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const API_URL = "http://localhost:8000/api/auth/";
-    const userForm = document.getElementById("loginForm");
 
-    if (userForm) {
-        userForm.addEventListener("submit", async function (e) {
+    
+    const adminForm = document.getElementById("adminLoginForm");
+
+    if (adminForm) {
+        adminForm.addEventListener("submit", async function (e) {
             e.preventDefault();
 
             const email = document.getElementById("email").value.trim();
@@ -22,31 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     })
                 });
 
-                const text = await res.text();
-                let data;
-
-                try {
-                    data = JSON.parse(text);
-                } catch {
-                    throw new Error(text);
-                }
+                const data = await res.json();
 
                 if (!res.ok) {
                     throw new Error(data.message || "Login failed");
                 }
 
-                alert("Login Successful 🚀");
-
-                if (data.user && data.user.isAdmin) {
-                    window.location.href = "/pages/admin/dashboard.html";
-                } else {
-                    window.location.href = "/pages/user/home.html";
+                // ✅ check admin
+                if (!data.user.isAdmin) {
+                    alert("Access denied ❌ Admin only");
+                    return;
                 }
+
+                alert("Admin Login Successful 🚀");
+                window.location.href = "http://127.0.0.1:5501/pages/admin/dashboard.html";
 
             } catch (error) {
                 alert(error.message);
             }
         });
     }
+
+  
 
 });

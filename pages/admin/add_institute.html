@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Department</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #f4f6f9;
+      }
+      .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <div class="card p-4">
+        <h3 class="text-primary mb-4">Add Department</h3>
+
+        <form id="departmentForm">
+          <div class="mb-3">
+            <label class="form-label">Department Name</label>
+            <input
+              type="text"
+              id="departmentName"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Department Image</label>
+            <input
+              type="file"
+              id="departmentImage"
+              class="form-control"
+              accept="image/*"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Department Description</label>
+            <textarea
+              id="departmentDescription"
+              class="form-control"
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Institute</label>
+            <select id="instituteID" class="form-select" required>
+              <option value="">Select Institute</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Department Coordinator</label>
+            <select id="departmentCoordinatorID" class="form-select">
+              <option value="">Select Coordinator</option>
+            </select>
+          </div>
+
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">
+              Save Department
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../../assets/js/admin/add-department.js"></script>
+  </body>
+</html>
